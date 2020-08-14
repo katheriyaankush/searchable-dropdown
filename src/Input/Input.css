@@ -1,0 +1,43 @@
+.Input{
+     outline: none;
+width: 80%;
+background: none;
+padding: 2px , 3px;
+margin: 5px;
+display: block;
+
+
+}
+
+.InputElement{
+   
+    outline: none;
+    width: 80%;
+    margin: 2px;
+    font: inherit;
+    background-color: white;
+    border: 1px , red;
+
+
+}
+
+.InputText{
+   
+    outline: none;
+    width: 30%;
+    margin: 22px;
+margin-left: auto;
+    font: inherit;
+    background-color: #cdeaea;
+
+
+}
+
+.InputText:focus{
+    outline: none;
+    background-color: #f8f7f7;
+}
+
+
+
+
