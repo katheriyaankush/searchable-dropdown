@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Profile from './Search/Dropdown';
+import Dropdown from './Search/Dropdown';
 import './App.css';
 
 class App extends Component {
@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div className="App">
 
-     <Profile/>
+     <Dropdown/>
 
       </div>
     );

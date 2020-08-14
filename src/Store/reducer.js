@@ -12,7 +12,7 @@ const initialState = {
 
 const reducer=(state=initialState,action)=>{
 
-  console.log("HIII",action.type);
+
 
 switch (action.type) {
     case actionType.COUNTRY:
