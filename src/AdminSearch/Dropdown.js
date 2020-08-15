@@ -14,7 +14,7 @@ import * as actionType from '../Store/action';
 
 
 
-class Profile extends Component{
+class Dropdown extends Component{
 
     state={
           country:{ 
@@ -159,4 +159,4 @@ const onDispatchToState= dispatch=>{
 };
 
 
-export default connect(onStateToProps,onDispatchToState)( Profile);
+export default connect(onStateToProps,onDispatchToState)( Dropdown);
