@@ -5,7 +5,8 @@ const initialState = {
     addCountry:'',
     Option : 
         
-      [{ label: 'Select', value: 'Select' }]
+      [{ label: 'Select', value: 'Select' }],
+      result:[]
 
     
 };
@@ -26,9 +27,27 @@ switch (action.type) {
         
              ...state,
              Option: fArray
+           
     
     }
         
+    case actionType.SEARCH_COUNTRY:
+      
+      const  countriesSArray = action.searchCountry; 
+   
+      const SArray = countriesSArray.countries.map(opt => ({ label: opt, value: opt }));
+     return{
+          ...state,
+          result: SArray
+     }
+     case actionType.R_COUNTRY:
+      
+
+     return{
+          ...state,
+          result: action.rCountry
+     }
+
       case actionType.ADDCOUNTRY:
      
      
@@ -36,11 +55,13 @@ switch (action.type) {
          ...state,
          addCountry: action.addCountry
       }
+      default:
+        return state;
 
 }
 
 
-return state;
+
 
 }
 

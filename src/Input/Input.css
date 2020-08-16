@@ -1,6 +1,6 @@
 .Input{
      outline: none;
-width: 80%;
+width: 90%;
 background: none;
 padding: 2px , 3px;
 margin: 5px;
@@ -24,10 +24,11 @@ display: block;
 .InputText{
    
     outline: none;
-    width: 30%;
+    width: 80%;
     margin: 22px;
-margin-left: auto;
-    font: inherit;
+ margin-right: 67px;
+
+       font: inherit;
     background-color: #cdeaea;
 
 
