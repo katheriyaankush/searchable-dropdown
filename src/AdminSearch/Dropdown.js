@@ -30,7 +30,8 @@ class Dropdown extends Component{
        users: [ ],
       result:  [],
       noOfItems: 5,
-     expanded: false
+     expanded: false,
+     addAndSelectHandler: ''
         
     };
    
@@ -41,6 +42,7 @@ componentDidMount(){
           
        this.props.onCountries(respose.data);
        this.props.resultData(respose.data);
+    
      
 } 
         
@@ -51,8 +53,13 @@ componentDidMount(){
                     
  
  });
+let pathNameInt = this.props.history.location.pathname;
 
+const pathName = pathNameInt.split('/').join('');
 
+ //pathName = pathName.replaceAll('/', '');
+
+this.setState(  {addAndSelectHandler:pathName} )
 
 
 
@@ -63,7 +70,7 @@ filterList=(event)=> {
     let value = event.target.value;
       if(!value.length){
         this.componentDidMount();
-        console.log("HH");
+      
       }
 
     this.setState({countryAdd: event.target.value});
@@ -73,7 +80,6 @@ filterList=(event)=> {
         return user.label.toLowerCase().search(value.toLowerCase()) !== -1;
     });
 
-    console.log("Reult===",result);
     this.props.resultShow(result);
 
    
@@ -111,9 +117,9 @@ this.setState({country:valueData});
 
 
 showMoreCountry=()=>{
-console.log("numberItems=",numberItems, "===", this.state.noOfItems)
      numberItems = numberItems+this.state.noOfItems;
      this.setState({expanded:false});
+
 
 
 
@@ -157,7 +163,7 @@ if(this.state.errorFetch){
                  userList = <p style={{textAlign:"left"}}>No Record found</p>;
                  addCountriesElement = <div >
   
-                 <button style={{backgroundColor: "#298af2"}} onClick = {this.addValue}>ADD Country</button>
+             { this.state.addAndSelectHandler =='admin' ?  <button style={{backgroundColor: "#298af2"}} onClick = {this.addValue}>ADD Country</button> : null}
                 
                 { this.state.error ? <p>Country Already Exist</p> : this.props.addCountry ? <p>Country suceesfully Added </p> : null}
                  </div> 
